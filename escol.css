@@ -1,0 +1,164 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 0 20px;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #003366;
+    color: #f0f2f5;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* Navegação */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f0f2f5;
+    font-size: 1.1em;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #005599;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    background-color: #004080;
+    transform: scale(1.05);
+}
+
+/* Estilo principal */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* Seções de história e vídeo */
+.history-container, .video-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+}
+
+.history-container h2 {
+    font-size: 2.5em;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.history-container p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+/* Estilo do vídeo */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.description {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Botão do álbum */
+.album-button {
+    display: inline-block;
+    margin: 20px 0;
+    text-decoration: none;
+    background-color: #003366;
+    color: #f0f2f5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.album-button:hover {
+    background-color: #3c22d3;
+    transform: scale(1.05);
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #003366;
+    color: #f0f2f5;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 8px 10px;
+        margin: 0 5px;
+    }
+
+    main h2 {
+        font-size: 2em;
+    }
+
+    main p {
+        font-size: 1.1em;
+    }
+}

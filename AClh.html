@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            animation: colorChange 10s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            0% { background-color: #c9320d; }
+            25% { background-color: #c95f0f; }
+            50% { background-color: #0cad88; }
+            75% { background-color: #2715c5; }
+            100% { background-color: #e71640; }
+        }
+
+        h1 {
+            color: #fff;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            max-width: 1200px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .foto {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .foto:hover {
+            transform: scale(1.02);
+        }
+
+        .foto img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Projeto Acolhimento 🤗❤️</h1>
+    <div class="galeria">
+        <div class="foto" onclick="openModal('./Conteudos/Acolhimento/Acolhimento_00.jpeg')">
+            <img src="./Conteudos/Acolhimento/Acolhimento_00.jpeg" alt="Acolhimento na Escola">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Acolhimento/Acolhimento_01.jpeg')">
+            <img src="./Conteudos/Acolhimento/Acolhimento_01.jpeg" alt="Apresentação teatral dos alunos">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Acolhimento/Acolhimento_02.jpeg')">
+            <img src="./Conteudos/Acolhimento/Acolhimento_02.jpeg" alt="Feira de ciências com projetos dos alunos">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Acolhimento/Acolhimento_03.jpeg')">
+            <img src="./Conteudos/Acolhimento/Acolhimento_03.jpeg" alt="Alunos participando de competições esportivas">
+        </div>
+    </div>
+
+    <h1>Agosto Lilás 💜</h1>
+    <div class="galeria">
+        <div class="foto" onclick="openModal('./Conteudos/Agosto lilás/Agostolilas_00.jpeg')">
+            <img src="./Conteudos/Agosto lilás/Agostolilas_00.jpeg" alt="1">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Agosto lilás/Agostolilas_01.jpeg')">
+            <img src="./Conteudos/Agosto lilás/Agostolilas_01.jpeg" alt="2">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Agosto lilás/Agostolilas_02.jpeg')">
+            <img src="./Conteudos/Agosto lilás/Agostolilas_02.jpeg" alt="3">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Agosto lilás/Agostolilas_03.jpeg')">
+            <img src="./Conteudos/Agosto lilás/Agostolilas_03.jpeg" alt="4">
+        </div>
+    </div>
+
+    <h1>Busca Ativa 🔍➡️</h1>
+    <div class="galeria">
+        <div class="foto" onclick="openModal('./Conteudos/Buacaativa/Buscaativa_00.jpeg')">
+            <img src="./Conteudos/Buacaativa/Buscaativa_00.jpeg" alt="Busca Ativa">
+        </div>
+    </div>
+
+    <h1>Cultural 🎭</h1>
+    <div class="galeria">
+        <div class="foto" onclick="openModal('./Conteudos/Cultural/Cultura_00.jpeg')">
+            <img src="./Conteudos/Cultural/Cultura_00.jpeg" alt="1">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Cultural/Cultura_01.jpeg')">
+            <img src="./Conteudos/Cultural/Cultura_01.jpeg" alt="2">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Cultural/Cultura_02.jpeg')">
+            <img src="./Conteudos/Cultural/Cultura_02.jpeg" alt="3">
+        </div>
+        <div class="foto" onclick="openModal('./Conteudos/Cultural/Cultura_03.jpeg')">
+            <img src="./Conteudos/Cultural/Cultura_03.jpeg" alt="4">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        function openModal(imgSrc) {
+            const modal = document.getElementById("myModal");
+            const modalImg = document.getElementById("img01");
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
